@@ -113,10 +113,11 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void displayNotes() {
+        DataManager.loadFromDatabase(mDbOpenHelper);
         mRecyclerItems.setLayoutManager(mNotesLayoutManager);
         mRecyclerItems.setAdapter(mNoteRecyclerAdapter);
 
-        SQLiteDatabase db = mDbOpenHelper.getReadableDatabase();
+
         selectNavigationMenuItem(R.id.nav_notes);
 
     }
