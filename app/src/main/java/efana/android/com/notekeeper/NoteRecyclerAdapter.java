@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 
 import efana.android.com.notekeeper.NoteKeeperDatabaseContract.NoteInfoEntry;
+import efana.android.com.notekeeper.NoteKeeperDatabaseContract.CourseInfoEntry;
 
 import java.util.List;
 
@@ -34,7 +35,7 @@ public class NoteRecyclerAdapter extends RecyclerView.Adapter<NoteRecyclerAdapte
     private void populateColumnPositions() {
         if(mCursor == null)
             return;
-        mCoursePos = mCursor.getColumnIndex(NoteInfoEntry.COLUMN_COURSE_ID);
+        mCoursePos = mCursor.getColumnIndex(CourseInfoEntry.COLUMN_COURSE_TITLE);
         mNoteTitlePos = mCursor.getColumnIndex(NoteInfoEntry.COLUMN_NOTE_TITLE);
         mIdPos = mCursor.getColumnIndex(NoteInfoEntry._ID);
     }
